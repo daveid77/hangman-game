@@ -1,20 +1,34 @@
 /**
  Hangman Game
  **/
+@font-face {
+    font-family: 'gang_bang_crime';
+    src: url('../fonts/gang_bang_crime/gang_bang_crime.woff2') format('woff2'),
+         url('../fonts/gang_bang_crime/gang_bang_crime.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 html, body {
   height: 100%;
 }
 body {
-  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 18px;
   color: #777;
+  background: #ccc;
 }
 h1, h2, h3, h4 {
-  font-family: 'Georgia', Times, Times New Roman, serif;
-  font-weight: bold;
+  /*font-family: 'swagmastaregular', 'Arial Black', 'Arial Bold', Gadget, sans-serif;*/
+  font-family: 'gang_bang_crime';
+  color: #000;
+  letter-spacing: .08em;
 }
 h1 {
-  font-size: 32px;
+  font-size: 42px;
+  color: #fff;
+  margin: 10px;
+  padding: 15px;
 }
 h2 {
   font-size: 28px;
@@ -23,8 +37,8 @@ h2 {
 }
 h3 {
   font-size: 22px;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
+  margin-bottom: 5px;
+  padding: 10px 10px 10px 0;
 }
 h4 {
   font-size: 18px;
@@ -35,13 +49,53 @@ p {
   padding: 10px 0;
   line-height: 1.9;
 }
+ol {
+  list-style-type: decimal;
+  padding: 20px;
+}
+ul {
+  list-style-type: circle;
+}
+li {
+  padding: 10px;
+}
+ol ol {
+  list-style-type: lower-alpha;
+}
+ul ul {
+  list-style-type: square;
+}
 
 #container {
+  height: 100%;
   padding-bottom: 45px;
+  overflow: auto;
 }
 .mainwrapper {
   width: 960px;
   margin: 0 auto;
+}
+.content {
+  /*width: 56%;*/
+  width: 594px;
+  float: left;
+}
+.sidebar {
+  /*width: 26%;*/
+  width: 214px;
+  float: right;
+}
+.maininner {
+  margin: 20px 0;
+  padding: 28px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+header, section, footer {
+  overflow: auto;
+}
+header {
+  background-color: #000;
 }
 footer {
   position: fixed;
@@ -58,11 +112,14 @@ footer .copyright {
   color: #000;
   /*padding: 10px 0;*/
 }
+footer .copyright a {
+  color: #000;
+  text-decoration: none;
+}
 
 /*div {
   border: 1px solid red;
 }*/
-
 
 
 /* Width at 980px and below */
@@ -75,6 +132,9 @@ footer .copyright {
   }
   .content {
     width: 364px;
+  }
+  .sidebar {
+    width: 214px;
   }
   .maininner {
     margin: 38px 0;
@@ -96,6 +156,11 @@ footer .copyright {
     overflow: auto;
     float: none;
   }
+  .sidebar.maininner {
+    width: 80%;
+    margin: 0 auto 38px;
+    float: none;
+  }
   .maininner {
     margin: 38px 0;
     padding: 28px;
@@ -111,6 +176,9 @@ footer .copyright {
 
   }
   .content {
+
+  }
+  .sidebar {
 
   }
   .maininner {
