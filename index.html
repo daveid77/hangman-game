@@ -24,52 +24,49 @@
     <section id="main">
       <div class="mainwrapper">
 
-        <div class="content maininner">
-
-          <h3>kickin hiphop knowledge</h3>
-          
-          <p id="pressanykey" class="red">Press any key to get started</p>
-
-          <div id="game-wrapper">
-
-            <p>Current word:<br>
-            <span id="current-word">&nbsp;</span></p>
-
-            <p>Letters already guessed:<br>
-            <span id="already-guessed">&nbsp;</span></p>
-
-            <p>Number of guesses remaining: 
-                <span id="guesses">&nbsp;</span></p>
-
-            <p class="red"><span id="error">&nbsp;</span></p>
-
-          </div>
-
-        </div>
-
         <div class="sidebar maininner">
 
           <h3>the score</h3>
 
           <p>Wins: 
-              <span id="wins">&nbsp;</span></p>
+              <span id="wins"></span></p>
 
-          <p>Winning word: 
-              <span id="winning-word">&nbsp;</span></p>
+          <p>Winning words: <br>
+              <span id="winning-word"></span></p>
 
           <p>Earned song:</p>
+
+        </div>
+
+        <div class="content maininner">
+
+          <h3>kickin hiphop knowledge</h3>
+          
+          <p id="pressanykey" class="red" style="display: none;">Press any key to get started</p>
+
+          <div id="game-wrapper" style="display: block;">
+
+            <p>Current word:<br>
+            <span id="current-word"></span></p>
+
+            <p>Letters already guessed:<br>
+            <span id="already-guessed"></span></p>
+
+            <p>Number of guesses remaining: 
+                <span id="guesses"></span></p>
+
+            <p class="red"><span id="error"></span></p>
+
+          </div>
 
         </div>
 
       </div>
     </section>
 
-    <p class="small" style="background: #fff; padding" 10px;>
-    --> NEED RESET FUNCTION <br>
-    QUESTIONS: <br>
-    1) how to find multiple indexes for correct letter matching? Probably need new method for swapping underscores with letters, too.<br>
-    2) ARRAY.JOIN!!!! how to properly add to "already guessed?" currently adding text nodes for each letter, and need to figure way to include comma for letters after first. <br>
-    3) How to detect full word of correct guesses?
+    <p class="small" style="background: #fff; padding: 10px; float: left;">
+    DEV QUESTIONS: <br>
+    1) 
     </p>
 
   </div>

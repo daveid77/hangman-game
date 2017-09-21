@@ -57,6 +57,11 @@ p.small {
   line-height: 1;
   padding: 0 20px;
 }
+span {
+  display: inline-block;
+  min-height: 20px;
+  line-height: 1.3;
+}
 span#current-word {
   letter-spacing: .5em;
 }
@@ -111,6 +116,7 @@ header {
   padding: 28px;
   background-color: #fff;
   border: 1px solid #ddd;
+  border-radius: 25px;
 }
 #game-wrapper {
   display: none;
@@ -194,6 +200,9 @@ footer .copyright a {
   h1 {
     font-size: 36px;
     line-height: 1.5;
+  }
+  h3 {
+    line-height: 1.3;
   }
   .mainwrapper {
 
