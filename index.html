@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <script type="text/javascript" src="assets/javascript/game.js"></script>
 
   <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> -->
 
@@ -18,7 +17,7 @@
 
     <header>
       <div class="mainwrapper">
-          <h1>HIP HOP WORD GAME</h1>
+          <h1>GOT GAME</h1>
       </div>
     </header>
 
@@ -26,36 +25,52 @@
       <div class="mainwrapper">
 
         <div class="content maininner">
+
+          <h3>kickin hiphop knowledge</h3>
           
-          <p><em>Press any key to get started</em></p>
+          <p id="pressanykey" class="red">Press any key to get started</p>
 
-          <p>Current word:</p>
+          <div id="game-wrapper">
 
-          <p>(underscores and letters)</p>
+            <p>Current word:<br>
+            <span id="current-word">&nbsp;</span></p>
 
-          <p>Letters already guessed:</p>
+            <p>Letters already guessed:<br>
+            <span id="already-guessed">&nbsp;</span></p>
 
-          <p>(letters already guessed)</p>
+            <p>Number of guesses remaining: 
+                <span id="guesses">&nbsp;</span></p>
 
-          <p>Number of guesses remaining:</p>
+            <p class="red"><span id="error">&nbsp;</span></p>
 
-          <p>(number of guesses remaining)</p>
+          </div>
 
         </div>
 
         <div class="sidebar maininner">
 
-          <h3>The Score</h3>
+          <h3>the score</h3>
 
-          <p>Wins: <span id="wins">(wins)</span></p>
+          <p>Wins: 
+              <span id="wins">&nbsp;</span></p>
 
-          <p>Winning words: <span id="winning-words"></span></p>
+          <p>Winning word: 
+              <span id="winning-word">&nbsp;</span></p>
 
-          <p>(Current winning song playing)</p>
+          <p>Earned song:</p>
 
         </div>
+
       </div>
     </section>
+
+    <p class="small" style="background: #fff; padding" 10px;>
+    --> NEED RESET FUNCTION <br>
+    QUESTIONS: <br>
+    1) how to find multiple indexes for correct letter matching? Probably need new method for swapping underscores with letters, too.<br>
+    2) ARRAY.JOIN!!!! how to properly add to "already guessed?" currently adding text nodes for each letter, and need to figure way to include comma for letters after first. <br>
+    3) How to detect full word of correct guesses?
+    </p>
 
   </div>
 
@@ -66,6 +81,9 @@
       </div>
     </div>
   </footer>
+
+
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
 

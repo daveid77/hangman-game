@@ -24,24 +24,25 @@
             <li>Computer chooses current word from array of hidden words
               <ol>
                 <li>Current word area populates with number of underscores matching number of letters in word</li>
+                <li>Number of guesses remaining sets to starting number of 15.</li>
               </ol>
             </li>
             <li>User guesses letter
               <ol>
-                <li>Guessed letter appears in Already Guessed area, comma-separated</li>
-                <li>If user selects letter already guessed, nothing happens.  (Maybe "bad" sound.)</li>
                 <li>If user guesses correctly, letter populates in current word area in proper sequence</li>
-                <li>If user guesses incorrectly, number of guesses decreases by one.</li>
+                <li>If user guesses incorrectly, number of guesses decreases by one.  Also, incorrect guessed letters appear in Already Guessed area, comma-separated.</li>
+                <li>If user selects letter already guessed, nothing happens.  (Maybe error message or "bad" sound.)</li>
+                <li>If user selects something other than a letter on keyboard, nothing happens.  (Maybe error message or "bad" sound.).
               </ol>
             </li>
-            <li>If user correctly guesses word, happy event happens:</li>
+            <li>If user correctly guesses full word, happy event happens:</li>
               <ol>
                 <li>Correct word displays somewhere</li>
                 <li>Song?</li>
                 <li>Game elements reset for next hidden word.</li>
               </ol>
             </li>
-            <li>If number of guesses hits zero, then it's the end of game, "press any key" text reappears, and any key press allows game to begin anew.</li>
+            <li>If number of guesses remaining hits zero, then it's the end of game, "press any key" text reappears, and any key press allows game to begin anew.</li>
           </ol>
 
         </div>

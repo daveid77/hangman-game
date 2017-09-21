@@ -1,5 +1,5 @@
 /**
- Hangman Game
+ Hiphop Game
  **/
 @font-face {
     font-family: 'gang_bang_crime';
@@ -16,16 +16,16 @@ body {
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 18px;
   color: #777;
-  background: #ccc;
+  background: #ccc url('../images/ny-train.jpg');
 }
 h1, h2, h3, h4 {
-  /*font-family: 'swagmastaregular', 'Arial Black', 'Arial Bold', Gadget, sans-serif;*/
   font-family: 'gang_bang_crime';
   color: #000;
   letter-spacing: .08em;
 }
 h1 {
   font-size: 42px;
+  line-height: 1;
   color: #fff;
   margin: 10px;
   padding: 15px;
@@ -49,6 +49,20 @@ p {
   padding: 10px 0;
   line-height: 1.9;
 }
+p.red {
+  color: #ff0000;
+}
+p.small {
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 20px;
+}
+span#current-word {
+  letter-spacing: .5em;
+}
+span#error {
+  font-family: monospace;
+}
 ol {
   list-style-type: decimal;
   padding: 20px;
@@ -66,6 +80,12 @@ ul ul {
   list-style-type: square;
 }
 
+header, section, footer {
+  overflow: auto;
+}
+header {
+  background-color: #000;
+}
 #container {
   height: 100%;
   padding-bottom: 45px;
@@ -78,6 +98,7 @@ ul ul {
 .content {
   /*width: 56%;*/
   width: 594px;
+  min-height: 300px;
   float: left;
 }
 .sidebar {
@@ -91,11 +112,8 @@ ul ul {
   background-color: #fff;
   border: 1px solid #ddd;
 }
-header, section, footer {
-  overflow: auto;
-}
-header {
-  background-color: #000;
+#game-wrapper {
+  display: none;
 }
 footer {
   position: fixed;
@@ -117,6 +135,7 @@ footer .copyright a {
   text-decoration: none;
 }
 
+
 /*div {
   border: 1px solid red;
 }*/
@@ -137,7 +156,7 @@ footer .copyright a {
     width: 214px;
   }
   .maininner {
-    margin: 38px 0;
+    margin: 20px 0;
     padding: 28px;
   }
 }
@@ -152,13 +171,13 @@ footer .copyright a {
   }
   .content.maininner {
     width: 80%;
-    margin: 38px auto;
+    margin: 20px auto;
     overflow: auto;
     float: none;
   }
   .sidebar.maininner {
     width: 80%;
-    margin: 0 auto 38px;
+    margin: 20px auto;
     float: none;
   }
   .maininner {
@@ -171,6 +190,10 @@ footer .copyright a {
 @media screen and (max-width: 640px) {
   body {
 
+  }
+  h1 {
+    font-size: 36px;
+    line-height: 1.5;
   }
   .mainwrapper {
 
