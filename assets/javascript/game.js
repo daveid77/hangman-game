@@ -4,7 +4,7 @@
 
 var hiddenWords = ['graffiti', 'breakdance', 'emcee', 'scratch', 'rap', 
                     'battle', 'capoeira', 'zulu', 'culture', 'art', 
-                    'music', 'rhythm', 'turntable', 'beatbox'];
+                    'music', 'rhythm', 'turntable', 'beatbox', 'elements'];
 
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
@@ -32,26 +32,22 @@ audio.volume = 0.1;
 audio.loop = true;
 
 // Kicks off game
-// document.onkeyup = function(event) {
-//   document.getElementById('pressanykey').style.display = 'none';
-//   document.getElementById('game-wrapper').style.display = 'block';
-//   reset();
-//   //audio.play();
-// }
+document.onkeyup = function(event) {
+  document.getElementById('pressanykey').style.display = 'none';
+  document.getElementById('game-wrapper').style.display = 'block';
+  reset();
+  // audio.play();
+}
 
 // Choosing new word and removes it from hiddenWords[] array.
 // Also, replaces computerChoice letters with underscores in page.
 function reset() {
 
-    //console.log(hiddenWords);
   var computerChoice = hiddenWords[Math.floor(Math.random() * hiddenWords.length)];
     console.log(computerChoice);
   var computerChoiceLength = computerChoice.length;
-    //console.log('computerChoiceLength: ' + computerChoiceLength);
   var computerChoiceNum = hiddenWords.indexOf(computerChoice);
-    //console.log('reset computerChoiceNum: ' + computerChoiceNum);
   var computerChoiceMasked = computerChoice.replace(/[a-z]/gi, '_');
-    //console.log(computerChoiceMasked); 
 
   currentWordText.textContent = computerChoiceMasked;
 
@@ -60,11 +56,12 @@ function reset() {
 
   alreadyGuessed = [];
   alreadyGuessedText.textContent = '';
+  errorText.textContent = '';
 
   playGame(computerChoice,computerChoiceNum,computerChoiceMasked);
 
 }
-reset();
+//reset();
 
 // Main game interaction.
 function playGame(computerChoice,computerChoiceNum,computerChoiceMasked) {
@@ -74,16 +71,11 @@ function playGame(computerChoice,computerChoiceNum,computerChoiceMasked) {
 
     // Determines which key pressed.
     var userGuess = event.key;
-      // console.log('userGuess: ' + userGuess);
     var userremainingText = document.createTextNode(userGuess);
-      // console.log('userremainingText: ' + userremainingText);
     var charNum = computerChoice.indexOf(userGuess); 
-      // console.log('charNum: ' + charNum);
 
     var alphabetNum = alphabet.indexOf(userGuess);
-      // console.log('alphabetNum: ' + alphabetNum);
     var alreadyGuessedNum = alreadyGuessed.indexOf(userGuess);
-      // console.log('alreadyGuessedNum: ' + alreadyGuessedNum);
 
     // Condition checkes whether character in alreadyGuessed[] array
     if (alreadyGuessedNum !== -1) {
@@ -111,7 +103,6 @@ function playGame(computerChoice,computerChoiceNum,computerChoiceMasked) {
             }
           }
           computerChoiceMasked = charArray.join('');
-            //console.log('computerChoiceMasked: ' + computerChoiceMasked);
 
           currentWordText.textContent = computerChoiceMasked.toUpperCase();
 
@@ -121,30 +112,32 @@ function playGame(computerChoice,computerChoiceNum,computerChoiceMasked) {
             winsText.textContent = winsNum;
 
             winningWords.push(computerChoiceMasked);
-              //console.log('winningWords: ' + winningWords);
             winningWordsUp = winningWords.join(', ');
             winningWordText.textContent = winningWordsUp.toUpperCase();
 
-              //console.log('win computerChoiceNum: ' + computerChoiceNum);
+            // removes word from hiddenWords[] array if guessed correctly
             hiddenWords.splice(computerChoiceNum, 1);
-              //console.log(' new hiddenWords: ' + hiddenWords);
 
-            reset();
+            alreadyGuessedText.textContent = '';
+
+            // delays reset so user can see full word before it clears
+            setTimeout(function(){ reset(); }, 4000);
 
           }
 
         } else {
 
-            //console.log('alreadyGuessed: ' + alreadyGuessed);
           alreadyGuessedStr = alreadyGuessed.join(', ').toUpperCase();
-            //console.log('alreadyGuessedStr: ' + alreadyGuessedStr);
           alreadyGuessedText.textContent = alreadyGuessedStr;
           remainingNum--;
           remainingText.textContent = remainingNum;
 
           if (remainingNum === 0) {
 
-            reset();
+            errorText.textContent = "Mic check. You ran out of chances for that word.";
+
+            // delays reset so user can see message before it clears
+            setTimeout(function(){ reset(); }, 4000);
 
           }
 

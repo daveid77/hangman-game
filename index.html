@@ -17,7 +17,9 @@
 
     <header>
       <div class="mainwrapper">
-          <h1>GOT GAME</h1>
+        <img src="assets/images/dj.png" alt="DJ">
+        <h1>GOT GAME</h1>
+        <img src="assets/images/spray-paint.png" alt="DJ">
       </div>
     </header>
 
@@ -28,7 +30,7 @@
 
           <h3>the score</h3>
 
-          <p>Wins: 
+          <p id="winswrap">Wins: 
               <span id="wins"></span></p>
 
           <p>Winning words: <br>
@@ -42,12 +44,12 @@
 
           <h3>kickin hiphop knowledge</h3>
           
-          <p id="pressanykey" class="red" style="display: none;">Press any key to get started</p>
+          <p id="pressanykey" class="red">Press any key to start breaking it down.</p>
 
-          <div id="game-wrapper" style="display: block;">
+          <div id="game-wrapper">
 
-            <p>Current word:<br>
-            <span id="current-word"></span></p>
+            <p>Current word:</p>
+            <p><span id="current-word"></span></p>
 
             <p>Letters already guessed:<br>
             <span id="already-guessed"></span></p>
@@ -66,7 +68,7 @@
 
     <p class="small" style="background: #fff; padding: 10px; float: left;">
     DEV QUESTIONS: <br>
-    1) 
+    1) after correct letter(s) then incorrect, correct mistakenly added to "already guessed"
     </p>
 
   </div>

@@ -9,6 +9,14 @@
     font-style: normal;
 
 }
+@font-face {
+    font-family: 'the_fresh_prince';
+    src: url('../fonts/the_fresh_prince/thefreshprince_abgespeckt.woff2') format('woff2'),
+         url('../fonts/the_fresh_prince/thefreshprince_abgespeckt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 html, body {
   height: 100%;
 }
@@ -29,6 +37,7 @@ h1 {
   color: #fff;
   margin: 10px;
   padding: 15px;
+  float: left;
 }
 h2 {
   font-size: 28px;
@@ -36,9 +45,12 @@ h2 {
   padding-bottom: 26px;
 }
 h3 {
-  font-size: 22px;
   margin-bottom: 5px;
   padding: 10px 10px 10px 0;
+  /*font-family: 'the_fresh_prince';*/
+  font-size: 22px;
+  line-height: 1.5;
+  letter-spacing: .12em;
 }
 h4 {
   font-size: 18px;
@@ -62,8 +74,30 @@ span {
   min-height: 20px;
   line-height: 1.3;
 }
-span#current-word {
-  letter-spacing: .5em;
+p#winswrap, 
+span#current-word, 
+span#already-guessed, 
+span#winning-word {
+  font-family: 'the_fresh_prince';
+  font-size: 70px;
+  line-height: .5;
+  font-weight: bold;
+  /*color: #000;*/
+  letter-spacing: .2em;
+} 
+p#winswrap, 
+span#already-guessed, 
+span#winning-word {
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  line-height: .7;
+  letter-spacing: .1em;
+}
+span#current-word, 
+p#winswrap, 
+span#winning-word {
+  color: #414EA3;
 }
 span#error {
   font-family: monospace;
@@ -90,6 +124,11 @@ header, section, footer {
 }
 header {
   background-color: #000;
+}
+header img {
+  height: 60px;
+  padding: 14px 20px;
+  float: left;
 }
 #container {
   height: 100%;
@@ -216,5 +255,17 @@ footer .copyright a {
   .maininner {
     margin: 38px 0;
     padding: 28px;
+  }
+}
+
+/* Width at 640px and below */
+@media screen and (max-width: 540px) {
+  header img {
+    height: 50px;
+    padding: 24px 16px 0 0;
+    float: right;
+  }
+  header img:nth-of-type(2) {
+    display: none;
   }
 }
