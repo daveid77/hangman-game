@@ -27,16 +27,24 @@ var alreadyGuessed = [];
 
 winsText.textContent = winsNum;
 
-
-// FUNCTIONS
-
-// Controls background audio during game.
 var audioDiv = document.getElementById('audio-toggle');
 var audio = new Audio('assets/music/ThePassionHiFi-SpanishWinter.mp3');
 audio.volume = 0.1;
 audio.loop = true;
 audio.mute = true; 
 
+
+// FUNCTIONS
+
+// Kicks off game
+document.onkeyup = function(event) {
+  document.getElementById('pressanykey').style.display = 'none';
+  document.getElementById('game-wrapper').style.display = 'block';
+  reset();
+  audioControl();
+}
+
+// Controls background audio during game.
 function audioControl() {
   if (audio.mute === true) {
     audio.play();
@@ -51,14 +59,6 @@ function audioControl() {
 audioDiv.onclick = function(){
   audioControl();
 };
-
-// Kicks off game
-document.onkeyup = function(event) {
-  document.getElementById('pressanykey').style.display = 'none';
-  document.getElementById('game-wrapper').style.display = 'block';
-  reset();
-  audioControl();
-}
 
 // Choosing new word and removes it from hiddenWords[] array.
 // Also, replaces computerChoice letters with underscores in page.
