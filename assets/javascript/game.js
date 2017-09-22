@@ -17,9 +17,9 @@ var alreadyGuessedText = document.getElementById("already-guessed");
 var remainingText = document.getElementById("guesses");
 var winsText = document.getElementById("wins");
 var winningWordText = document.getElementById("winning-word");
-var winningWords = [];
 var errorText = document.getElementById("error");
 
+var winningWords = [];
 var alreadyGuessed = [];
 
 winsText.textContent = winsNum;
@@ -55,6 +55,7 @@ function reset() {
   remainingText.textContent = remainingNum;
 
   alreadyGuessed = [];
+
   alreadyGuessedText.textContent = '';
   errorText.textContent = '';
 
@@ -72,8 +73,7 @@ function playGame(computerChoice,computerChoiceNum,computerChoiceMasked) {
     // Determines which key pressed.
     var userGuess = event.key;
     var userremainingText = document.createTextNode(userGuess);
-    var charNum = computerChoice.indexOf(userGuess); 
-
+    var charNum = computerChoice.indexOf(userGuess);
     var alphabetNum = alphabet.indexOf(userGuess);
     var alreadyGuessedNum = alreadyGuessed.indexOf(userGuess);
 
@@ -84,8 +84,6 @@ function playGame(computerChoice,computerChoiceNum,computerChoiceMasked) {
         + userGuess + "\".";
 
     } else {
-
-      alreadyGuessed.push(userGuess);
 
       // Condition checks whether userGuess is a letter.
       if (alphabetNum !== -1) {
@@ -127,6 +125,8 @@ function playGame(computerChoice,computerChoiceNum,computerChoiceMasked) {
 
         } else {
 
+          alreadyGuessed.push(userGuess);
+          
           alreadyGuessedStr = alreadyGuessed.join(', ').toUpperCase();
           alreadyGuessedText.textContent = alreadyGuessedStr;
           remainingNum--;
