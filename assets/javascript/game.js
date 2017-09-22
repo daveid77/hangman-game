@@ -2,6 +2,9 @@
 // Hiphop Game
 //
 
+
+// VARIABLES 
+
 var hiddenWords = ['graffiti', 'breakdance', 'emcee', 'scratch', 'rap', 
                     'battle', 'capoeira', 'zulu', 'culture', 'art', 
                     'music', 'rhythm', 'turntable', 'beatbox', 'elements'];
@@ -25,18 +28,36 @@ var alreadyGuessed = [];
 winsText.textContent = winsNum;
 
 
-// wrapping function here
+// FUNCTIONS
 
+// Controls background audio during game.
+var audioDiv = document.getElementById('audio-toggle');
 var audio = new Audio('assets/music/ThePassionHiFi-SpanishWinter.mp3');
 audio.volume = 0.1;
 audio.loop = true;
+audio.mute = true; 
+
+function audioControl() {
+  if (audio.mute === true) {
+    audio.play();
+    audioDiv.textContent = 'Mute Audio';
+    audio.mute = false;
+  } else  {
+    audio.pause();
+    audioDiv.textContent = 'Play Audio';
+    audio.mute = true;
+  }
+}
+audioDiv.onclick = function(){
+  audioControl();
+};
 
 // Kicks off game
 document.onkeyup = function(event) {
   document.getElementById('pressanykey').style.display = 'none';
   document.getElementById('game-wrapper').style.display = 'block';
   reset();
-  // audio.play();
+  audioControl();
 }
 
 // Choosing new word and removes it from hiddenWords[] array.
@@ -62,9 +83,9 @@ function reset() {
   playGame(computerChoice,computerChoiceNum,computerChoiceMasked);
 
 }
-//reset();
 
 // Main game interaction.
+
 function playGame(computerChoice,computerChoiceNum,computerChoiceMasked) {
 
   // Function runs when user presses a key.
@@ -154,6 +175,5 @@ function playGame(computerChoice,computerChoiceNum,computerChoiceMasked) {
   }
 
 }
-// playGame();
 
 

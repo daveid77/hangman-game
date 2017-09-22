@@ -27,7 +27,7 @@ body {
   background: #ccc url('../images/ny-train.jpg');
 }
 h1, h2, h3, h4 {
-  font-family: 'gang_bang_crime';
+  font-family: 'gang_bang_crime', Arial, 'Helvetica Neue', Helvetica, sans-serif;
   color: #000;
   letter-spacing: .08em;
 }
@@ -78,7 +78,7 @@ p#winswrap,
 span#current-word, 
 span#already-guessed, 
 span#winning-word {
-  font-family: 'the_fresh_prince';
+  font-family: 'the_fresh_prince', Arial, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 70px;
   line-height: .5;
   font-weight: bold;
@@ -151,6 +151,7 @@ header img {
   float: right;
 }
 .maininner {
+  position: relative;
   margin: 20px 0;
   padding: 28px;
   background-color: #fff;
@@ -178,6 +179,20 @@ footer .copyright {
 footer .copyright a {
   color: #000;
   text-decoration: none;
+}
+#audio-toggle {
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  right: 20px;
+  color: #ff0000;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: .8;
+}
+#audio-toggle:hover {
+  color: #000;
+  opacity: 1;
 }
 
 
